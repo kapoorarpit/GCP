@@ -7,7 +7,7 @@ const {Storage} = require('@google-cloud/storage');
 const storage = new Storage({ projectId: GOOGLE_CLOUD_PROJECT_ID,
                             keyFilename: GOOGLE_CLOUD_KEYFILE,});
 
-const bucketName = 'first-12345bucket45678';
+const bucketName = 'first-12345bucket';
 
 async function createBucket() {
   // Creates the new bucket
