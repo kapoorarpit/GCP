@@ -1,10 +1,10 @@
 'use strict';
-const GOOGLE_CLOUD_PROJECT_ID = 'disco-glass-325310'; // Replace with your project ID
-const GOOGLE_CLOUD_KEYFILE = 'disco-glass-325310-f559dccdcb9b.json'; // Replace with the path to the downloaded private key
+const GOOGLE_CLOUD_PROJECT_ID = 'disco-glass-325310'; 
+const GOOGLE_CLOUD_KEYFILE = 'disco-glass-325310-f559dccdcb9b.json'; 
 
 async function main(bucketName, directoryPath) {
   // The ID of your GCS bucket
-  bucketName = 'first-12345bucket';
+  bucketName = 'first-12345bucket45678sdfgh';
 
   // The local directory to upload
   directoryPath = '././upload';
@@ -14,7 +14,7 @@ async function main(bucketName, directoryPath) {
 
   // Creates a client
   const storage = new Storage({ projectId: GOOGLE_CLOUD_PROJECT_ID,
-    keyFilename: GOOGLE_CLOUD_KEYFILE,});
+                                keyFilename: GOOGLE_CLOUD_KEYFILE,});
 
 const fs = require('fs');
 const path = require('path');
@@ -61,10 +61,6 @@ const fileList = [];
           return storage
             .bucket(bucketName)
             .upload(filePath, {destination})
-            .then(
-              uploadResp => ({fileName: destination, status: uploadResp[0]}),
-              err => ({fileName: destination, response: err})
-            );
         })
       );
 
@@ -80,4 +76,4 @@ const fileList = [];
   // [END upload_directory]
 }
 
-main(...process.argv.slice(2)).catch(console.error);
+main().catch(console.error);
